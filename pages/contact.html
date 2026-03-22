@@ -1,0 +1,103 @@
+<section class="section" style="padding-top: 12rem; padding-bottom: 8rem;">
+    <div class="container">
+        <div class="section-label" data-text="06 // OPEN_CHANNEL">06 // OPEN_CHANNEL</div>
+        <h1 class="section-title">Initiate <br><span class="text-gradient">Contact.</span></h1>
+        <p class="section-subtitle">
+            Every project starts with a conversation. No RFPs, no long forms, no sales calls. Tell us what you're building and we'll tell you how we'd approach it.
+        </p>
+
+        <div style="display: grid; grid-template-columns: 1.4fr 1fr; gap: 4rem; margin-top: 5rem; align-items: start;">
+
+            <!-- LEFT: Contact Form -->
+            <div>
+                <p class="mono text-gradient" style="margin-bottom: 2rem; font-size: 0.85rem;">> TRANSMIT_DATA.form</p>
+                <form id="contact-form" style="display: flex; flex-direction: column; gap: 1.5rem;">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+                        <div>
+                            <label class="mono" style="font-size: 0.8rem; color: var(--color-text-secondary); display: block; margin-bottom: 0.5rem;">NAME *</label>
+                            <input type="text" id="contact-name" name="from_name" placeholder="Your Name" required
+                                style="width: 100%; background: rgba(255,255,255,0.04); border: 1px solid var(--color-border); border-radius: 4px; padding: 0.9rem 1rem; color: #fff; font-family: var(--font-mono); font-size: 0.9rem; outline: none; transition: border-color 0.2s;" 
+                                onfocus="this.style.borderColor='var(--color-cyan)'" onblur="this.style.borderColor='var(--color-border)'">
+                        </div>
+                        <div>
+                            <label class="mono" style="font-size: 0.8rem; color: var(--color-text-secondary); display: block; margin-bottom: 0.5rem;">EMAIL *</label>
+                            <input type="email" id="contact-email" name="reply_to" placeholder="your@email.com" required
+                                style="width: 100%; background: rgba(255,255,255,0.04); border: 1px solid var(--color-border); border-radius: 4px; padding: 0.9rem 1rem; color: #fff; font-family: var(--font-mono); font-size: 0.9rem; outline: none; transition: border-color 0.2s;"
+                                onfocus="this.style.borderColor='var(--color-cyan)'" onblur="this.style.borderColor='var(--color-border)'">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="mono" style="font-size: 0.8rem; color: var(--color-text-secondary); display: block; margin-bottom: 0.5rem;">COMPANY / ORGANIZATION</label>
+                        <input type="text" id="contact-company" name="company" placeholder="Your Company Name"
+                            style="width: 100%; background: rgba(255,255,255,0.04); border: 1px solid var(--color-border); border-radius: 4px; padding: 0.9rem 1rem; color: #fff; font-family: var(--font-mono); font-size: 0.9rem; outline: none; transition: border-color 0.2s;"
+                            onfocus="this.style.borderColor='var(--color-cyan)'" onblur="this.style.borderColor='var(--color-border)'">
+                    </div>
+
+                    <div>
+                        <label class="mono" style="font-size: 0.8rem; color: var(--color-text-secondary); display: block; margin-bottom: 0.5rem;">PRIMARY_OBJECTIVE</label>
+                        <select id="contact-budget" name="objective"
+                            style="width: 100%; background: rgba(255,255,255,0.04); border: 1px solid var(--color-border); border-radius: 4px; padding: 0.9rem 1rem; color: var(--color-text-secondary); font-family: var(--font-mono); font-size: 0.9rem; outline: none; cursor: pointer; transition: border-color 0.2s;"
+                            onfocus="this.style.borderColor='var(--color-cyan)'" onblur="this.style.borderColor='var(--color-border)'">
+                            <option value="" style="background: #0a0a0f;">SELECT OBJECTIVE...</option>
+                            <option value="new_build" style="background: #0a0a0f;">New Product / Brand Build</option>
+                            <option value="bug_fixing" style="background: #0a0a0f;">Bug Fixing / Maintenance</option>
+                            <option value="customization" style="background: #0a0a0f;">Existing System Customization</option>
+                            <option value="ai_integration" style="background: #0a0a0f;">AI Core Implementation</option>
+                            <option value="other" style="background: #0a0a0f;">Other Technical Inquiry</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="mono" style="font-size: 0.8rem; color: var(--color-text-secondary); display: block; margin-bottom: 0.5rem;">PROJECT BRIEF *</label>
+                        <textarea id="contact-brief" name="message" placeholder="Describe what you need built. The more technical detail the better — stack you're using, scale requirements, existing pain points, timelines..." required rows="6"
+                            style="width: 100%; background: rgba(255,255,255,0.04); border: 1px solid var(--color-border); border-radius: 4px; padding: 0.9rem 1rem; color: #fff; font-family: var(--font-mono); font-size: 0.9rem; outline: none; resize: vertical; transition: border-color 0.2s;"
+                            onfocus="this.style.borderColor='var(--color-cyan)'" onblur="this.style.borderColor='var(--color-border)'"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-primary" style="font-size: 1rem; padding: 1rem 2rem; cursor: pointer; border: none; width: 100%; text-align: center; justify-content: center;">
+                        TRANSMIT MESSAGE
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline; vertical-align: middle; margin-left: 0.5rem;">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </button>
+                    <p id="form-status" class="mono" style="font-size: 0.85rem; color: var(--color-cyan); display: none; text-align: center;"></p>
+                </form>
+            </div>
+
+            <!-- RIGHT: Direct Channels & Info -->
+            <div style="display: flex; flex-direction: column; gap: 2rem; position: sticky; top: 6rem;">
+                <div class="glass-panel" style="padding: 2rem;">
+                    <p class="mono text-gradient" style="font-size: 0.85rem; margin-bottom: 1.5rem;">> DIRECT_CHANNELS</p>
+                    <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                        <div>
+                            <p class="mono" style="font-size: 0.75rem; color: var(--color-text-secondary); margin-bottom: 0.3rem;">SECURE_WP_LINK</p>
+                            <a href="https://wa.me/918128117118" target="_blank" style="color: var(--color-cyan); text-decoration: none; font-size: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+                                <span>INITIALIZE_WP_COMMS</span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                            </a>
+                        </div>
+                        <div>
+                            <p class="mono" style="font-size: 0.75rem; color: var(--color-text-secondary); margin-bottom: 0.3rem;">SECURE_MAIL_LINK</p>
+                            <a href="mailto:khirani042@rku.ac.in" style="color: var(--color-cyan); text-decoration: none; font-size: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+                                <span>TRANSMIT_SECURE_MAIL</span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2-2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-panel" style="padding: 2rem;">
+                    <p class="mono text-gradient" style="font-size: 0.85rem; margin-bottom: 1rem;">> RESPONSE_SLA</p>
+                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                        <div class="pulse-dot"></div>
+                        <p style="color: #fff;">Systems online and monitoring.</p>
+                    </div>
+                    <p style="color: var(--color-text-secondary); font-size: 0.95rem; line-height: 1.8;">
+                        We respond to every qualified inquiry within <strong style="color: #fff;">24 hours</strong>, Monday through Friday. For urgent matters, flag it in your message subject.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

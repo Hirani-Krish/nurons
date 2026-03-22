@@ -1,0 +1,73 @@
+<section class="section" style="padding-top: 12rem; padding-bottom: 8rem;">
+    <div class="container">
+        <div class="section-label" data-text="04 // INTEL_STREAM">04 // INTEL_STREAM</div>
+        <h1 class="section-title">What We're <br><span class="text-gradient">Building.</span></h1>
+        <p class="section-subtitle">
+            A look at the projects and technologies we're currently working on. Real work in progress — from live tracking to multi-platform native apps.
+        </p>
+
+        <div class="intel-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 2rem; margin-top: 3rem;">
+
+            <!-- Article 1 -->
+            <article class="intel-card glass-panel" style="padding: 2.5rem; position: relative; overflow: hidden; display: flex; flex-direction: column;">
+                <div style="position: absolute; top:0; left:0; width:100%; height:4px; background: var(--color-cyan);"></div>
+                <p class="mono" style="color: var(--color-text-secondary); font-size: 0.8rem; margin-bottom: 1rem;">STATUS: IN PROGRESS | TAG: // LIVE_TRACKING</p>
+                <h3 style="font-size: 1.4rem; margin-bottom: 1rem;">Real-Time Driver Tracking System</h3>
+                <p style="color: var(--color-text-secondary); margin-bottom: 1.5rem; line-height: 1.8; font-size: 0.95rem; flex-grow: 1;">We're building a live GPS tracking dashboard for a logistics client managing 200+ delivery drivers. The system uses WebSocket connections to stream sub-second location updates to a React operations dashboard. We've solved the critical challenge of maintaining tracking accuracy when the driver's phone browser goes to background — using Service Workers and the Background Geolocation API as a fallback layer.</p>
+                <div class="mono" style="color: var(--color-cyan); font-size: 0.8rem; margin-bottom: 1.5rem;">STACK: FASTAPI · WEBSOCKETS · REACT · GOOGLE MAPS API</div>
+                <div class="mono" style="color: var(--color-text-secondary); font-size: 0.75rem;">READ_TIME: ~6 min · STATUS: Active Development</div>
+            </article>
+
+            <!-- Article 2 -->
+            <article class="intel-card glass-panel" style="padding: 2.5rem; position: relative; overflow: hidden; display: flex; flex-direction: column;">
+                <div style="position: absolute; top:0; left:0; width:100%; height:4px; background: var(--color-purple);"></div>
+                <p class="mono" style="color: var(--color-text-secondary); font-size: 0.8rem; margin-bottom: 1rem;">STATUS: IN PROGRESS | TAG: // MULTI_PLATFORM</p>
+                <h3 style="font-size: 1.4rem; margin-bottom: 1rem;">One Website, Two Native Apps — Separating User Flows</h3>
+                <p style="color: var(--color-text-secondary); margin-bottom: 1.5rem; line-height: 1.8; font-size: 0.95rem; flex-grow: 1;">Currently engineering a platform where a single website serves as the central hub, while two separate native mobile apps handle distinct user flows — one for customers and one for operations staff. The website shares authentication and data via a common FastAPI backend, but each native app (React Native) is optimized for its specific use case: ordering and tracking for customers, and dispatch management for operators.</p>
+                <div class="mono" style="color: var(--color-cyan); font-size: 0.8rem; margin-bottom: 1.5rem;">STACK: NEXT.JS · REACT NATIVE · FASTAPI · POSTGRESQL</div>
+                <div class="mono" style="color: var(--color-text-secondary); font-size: 0.75rem;">READ_TIME: ~8 min · STATUS: Architecture Phase</div>
+            </article>
+
+            <!-- Article 3 -->
+            <article class="intel-card glass-panel" style="padding: 2.5rem; position: relative; overflow: hidden; display: flex; flex-direction: column;">
+                <div style="position: absolute; top:0; left:0; width:100%; height:4px; background: var(--color-cyan);"></div>
+                <p class="mono" style="color: var(--color-text-secondary); font-size: 0.8rem; margin-bottom: 1rem;">STATUS: COMPLETED | TAG: // E_COMMERCE</p>
+                <h3 style="font-size: 1.4rem; margin-bottom: 1rem;">Farm-to-Door E-Commerce Platform</h3>
+                <p style="color: var(--color-text-secondary); margin-bottom: 1.5rem; line-height: 1.8; font-size: 0.95rem; flex-grow: 1;">We recently finished designing the full architecture for a KisanKonnect-style e-commerce platform. Includes real-time order lifecycle management, Razorpay payment integration, Google Maps-based delivery routing, operating hours enforcement, and a cancellation/returns flow. The admin panel gives operators complete control over inventory, pricing, and driver assignments.</p>
+                <div class="mono" style="color: var(--color-cyan); font-size: 0.8rem; margin-bottom: 1.5rem;">STACK: NEXT.JS · FASTAPI · POSTGRESQL · RAZORPAY · SOCKET.IO</div>
+                <div class="mono" style="color: var(--color-text-secondary); font-size: 0.75rem;">READ_TIME: ~10 min · STATUS: Delivered Architecture</div>
+            </article>
+
+            <!-- Article 4 -->
+            <article class="intel-card glass-panel" style="padding: 2.5rem; position: relative; overflow: hidden; display: flex; flex-direction: column;">
+                <div style="position: absolute; top:0; left:0; width:100%; height:4px; background: var(--color-purple);"></div>
+                <p class="mono" style="color: var(--color-text-secondary); font-size: 0.8rem; margin-bottom: 1rem;">STATUS: IN PROGRESS | TAG: // AI_AUTOMATION</p>
+                <h3 style="font-size: 1.4rem; margin-bottom: 1rem;">AI-Powered Client Onboarding Automation</h3>
+                <p style="color: var(--color-text-secondary); margin-bottom: 1.5rem; line-height: 1.8; font-size: 0.95rem; flex-grow: 1;">Building an internal tool that uses AI to automatically generate project scope documents, technical architecture proposals, and sprint plans from a simple client brief. The system parses the brief using an LLM, identifies the core requirements, suggests the optimal tech stack, and outputs a structured project timeline — cutting our proposal turnaround from days to hours.</p>
+                <div class="mono" style="color: var(--color-cyan); font-size: 0.8rem; margin-bottom: 1.5rem;">STACK: PYTHON · LANGCHAIN · FASTAPI · REACT</div>
+                <div class="mono" style="color: var(--color-text-secondary); font-size: 0.75rem;">READ_TIME: ~5 min · STATUS: Internal Tool</div>
+            </article>
+
+            <!-- Article 5 -->
+            <article class="intel-card glass-panel" style="padding: 2.5rem; position: relative; overflow: hidden; display: flex; flex-direction: column;">
+                <div style="position: absolute; top:0; left:0; width:100%; height:4px; background: var(--color-cyan);"></div>
+                <p class="mono" style="color: var(--color-text-secondary); font-size: 0.8rem; margin-bottom: 1rem;">STATUS: COMPLETED | TAG: // WEB_DEVELOPMENT</p>
+                <h3 style="font-size: 1.4rem; margin-bottom: 1rem;">This Website: 3D Interactive Company Showcase</h3>
+                <p style="color: var(--color-text-secondary); margin-bottom: 1.5rem; line-height: 1.8; font-size: 0.95rem; flex-grow: 1;">Yes — what you're looking at right now. We built this entire site as a high-tech, dark-themed SPA with persistent Three.js 3D particle backgrounds, interactive holographic service displays, GSAP animations, and client-side routing. Zero frameworks beyond vanilla JS, CSS, and Three.js. The entire site is statically deployable on GitHub Pages.</p>
+                <div class="mono" style="color: var(--color-cyan); font-size: 0.8rem; margin-bottom: 1.5rem;">STACK: HTML · CSS · JAVASCRIPT · THREE.JS · GSAP</div>
+                <div class="mono" style="color: var(--color-text-secondary); font-size: 0.75rem;">READ_TIME: ~4 min · STATUS: Live & Deployed</div>
+            </article>
+
+            <!-- Article 6 -->
+            <article class="intel-card glass-panel" style="padding: 2.5rem; position: relative; overflow: hidden; display: flex; flex-direction: column;">
+                <div style="position: absolute; top:0; left:0; width:100%; height:4px; background: var(--color-purple);"></div>
+                <p class="mono" style="color: var(--color-text-secondary); font-size: 0.8rem; margin-bottom: 1rem;">STATUS: ONGOING | TAG: // BUG_FIXING</p>
+                <h3 style="font-size: 1.4rem; margin-bottom: 1rem;">Production Bug-Fix & Maintenance Retainers</h3>
+                <p style="color: var(--color-text-secondary); margin-bottom: 1.5rem; line-height: 1.8; font-size: 0.95rem; flex-grow: 1;">We maintain ongoing retainer relationships with multiple clients for production bug-fixes, performance optimizations, and feature updates. From diagnosing memory leaks in Node.js services to fixing broken API integrations and patching security vulnerabilities — our team provides rapid-response engineering support under SLA guarantees.</p>
+                <div class="mono" style="color: var(--color-cyan); font-size: 0.8rem; margin-bottom: 1.5rem;">STACK: VARIES PER CLIENT · PYTHON · NODE.JS · REACT</div>
+                <div class="mono" style="color: var(--color-text-secondary); font-size: 0.75rem;">READ_TIME: ~3 min · STATUS: Always On</div>
+            </article>
+
+        </div>
+    </div>
+</section>

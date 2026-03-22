@@ -1,0 +1,211 @@
+<section class="section" style="padding-top: 12rem;">
+    <div class="container">
+        <div class="section-label" data-text="02 // MISSION_ARCHIVES">02 // MISSION_ARCHIVES</div>
+        <h1 class="section-title">Declassified <br><span class="text-gradient">System Logs.</span></h1>
+        <p class="section-subtitle">
+            To protect client IP, project names and identifiers are abstracted. These are real engagements, distilled into capability demonstrations. Results are verified and documented internally.
+        </p>
+
+        <div style="display: flex; flex-direction: column; gap: 2.5rem; margin-top: 3rem;">
+
+            <!-- Archive 1 -->
+            <div class="glass-panel" style="padding: 3rem; border-left: 3px solid var(--color-cyan);">
+                <div style="display: flex; justify-content: space-between; align-items: start; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem;">
+                    <div>
+                        <p class="mono" style="color: var(--color-cyan); margin-bottom: 0.5rem; font-size: 0.85rem;">[ STATUS: DEPLOYED ] // ARCHIVE_01 // SECTOR: FINTECH</p>
+                        <h2 style="font-size: 1.8rem;">Project: QUANTUM</h2>
+                        <h3 class="text-gradient" style="margin-top: 0.3rem; font-size: 1.2rem; font-weight: 400;">High-Frequency Algorithmic Trading Engine</h3>
+                    </div>
+                    <div class="mono" style="color: var(--color-text-secondary); font-size: 0.85rem; text-align: right;">
+                        <div>YEAR: 2025</div>
+                        <div>DURATION: 4 MONTHS</div>
+                    </div>
+                </div>
+                <p style="color: var(--color-text-secondary); margin-bottom: 1.5rem; line-height: 1.8;">
+                    <strong style="color: #fff;">Challenge:</strong> A fintech client required an automated trading engine capable of interpreting live market WebSocket feeds and executing buy/sell decisions within 5 millisecond windows to capitalize on micro-arbitrage opportunities. Their existing Node.js implementation was too slow and suffering memory leaks under high-throughput conditions.
+                </p>
+                <p style="color: var(--color-text-secondary); margin-bottom: 2rem; line-height: 1.8;">
+                    <strong style="color: #fff;">Execution:</strong> Stripped the legacy Node.js engine. Rebuilt the core decision module in Rust for memory-safe, zero-cost abstractions. Connected via FFI to a Python statistical analysis layer for dynamic AI coefficient tuning. Deployed to co-located bare-metal infrastructure for minimal network hops.
+                </p>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin-bottom: 1.5rem;">
+                    <div style="text-align: center; padding: 1rem; background: rgba(0,243,255,0.05); border-radius: 4px;">
+                        <div class="text-gradient" style="font-size: 1.8rem; font-weight: 700;">400%</div>
+                        <div style="color: var(--color-text-secondary); font-size: 0.85rem;">Latency Reduced</div>
+                    </div>
+                    <div style="text-align: center; padding: 1rem; background: rgba(0,243,255,0.05); border-radius: 4px;">
+                        <div class="text-gradient" style="font-size: 1.8rem; font-weight: 700;">3.2ms</div>
+                        <div style="color: var(--color-text-secondary); font-size: 0.85rem;">Avg Decision Time</div>
+                    </div>
+                    <div style="text-align: center; padding: 1rem; background: rgba(0,243,255,0.05); border-radius: 4px;">
+                        <div class="text-gradient" style="font-size: 1.8rem; font-weight: 700;">99.999%</div>
+                        <div style="color: var(--color-text-secondary); font-size: 0.85rem;">Uptime</div>
+                    </div>
+                </div>
+                <div class="mono" style="background: rgba(0,0,0,0.4); padding: 1.5rem; border-radius: 4px; font-size: 0.85rem; color: var(--color-cyan);">
+                    > STACK: RUST · PYTHON · WEBSOCKETS · REDIS · BARE-METAL
+                </div>
+            </div>
+
+            <!-- Archive 2 -->
+            <div class="glass-panel" style="padding: 3rem; border-left: 3px solid var(--color-purple);">
+                <div style="display: flex; justify-content: space-between; align-items: start; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem;">
+                    <div>
+                        <p class="mono" style="color: var(--color-purple); margin-bottom: 0.5rem; font-size: 0.85rem;">[ STATUS: DEPLOYED ] // ARCHIVE_02 // SECTOR: HEALTHCARE</p>
+                        <h2 style="font-size: 1.8rem;">Project: FORTRESS</h2>
+                        <h3 class="text-gradient" style="margin-top: 0.3rem; font-size: 1.2rem; font-weight: 400;">Enterprise Data Lake Encryption & Zero Trust Migration</h3>
+                    </div>
+                    <div class="mono" style="color: var(--color-text-secondary); font-size: 0.85rem; text-align: right;">
+                        <div>YEAR: 2024</div>
+                        <div>DURATION: 6 MONTHS</div>
+                    </div>
+                </div>
+                <p style="color: var(--color-text-secondary); margin-bottom: 1.5rem; line-height: 1.8;">
+                    <strong style="color: #fff;">Challenge:</strong> A healthcare data provider suffered a penetration breach on their staging environment, exposing a critical unpatched SQL injection vector. The client managed a 50TB patient data lake with strict HIPAA obligations and could not afford downtime during remediation.
+                </p>
+                <p style="color: var(--color-text-secondary); margin-bottom: 2rem; line-height: 1.8;">
+                    <strong style="color: #fff;">Execution:</strong> Deployed a custom rotating-key KMS (Key Management Service) integrated with AWS HSM. Migrated all tables to a heavily indexed PostgreSQL cluster with field-level AES-256 encryption. Implemented strict Zero-Trust API routing via FastAPI with JWT + RBAC. Executed zero-downtime migration using blue-green deployment strategy.
+                </p>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin-bottom: 1.5rem;">
+                    <div style="text-align: center; padding: 1rem; background: rgba(176,38,255,0.05); border-radius: 4px;">
+                        <div class="text-gradient" style="font-size: 1.8rem; font-weight: 700;">&lt; 2ms</div>
+                        <div style="color: var(--color-text-secondary); font-size: 0.85rem;">Query Degradation</div>
+                    </div>
+                    <div style="text-align: center; padding: 1rem; background: rgba(176,38,255,0.05); border-radius: 4px;">
+                        <div class="text-gradient" style="font-size: 1.8rem; font-weight: 700;">50TB</div>
+                        <div style="color: var(--color-text-secondary); font-size: 0.85rem;">Data Secured</div>
+                    </div>
+                    <div style="text-align: center; padding: 1rem; background: rgba(176,38,255,0.05); border-radius: 4px;">
+                        <div class="text-gradient" style="font-size: 1.8rem; font-weight: 700;">0 min</div>
+                        <div style="color: var(--color-text-secondary); font-size: 0.85rem;">Downtime</div>
+                    </div>
+                </div>
+                <div class="mono" style="background: rgba(0,0,0,0.4); padding: 1.5rem; border-radius: 4px; font-size: 0.85rem; color: var(--color-purple);">
+                    > STACK: FASTAPI · POSTGRESQL · AES-256 · ZERO-TRUST · AWS-HSM · JWT
+                </div>
+            </div>
+
+            <!-- Archive 3 -->
+            <div class="glass-panel" style="padding: 3rem; border-left: 3px solid var(--color-cyan);">
+                <div style="display: flex; justify-content: space-between; align-items: start; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem;">
+                    <div>
+                        <p class="mono" style="color: var(--color-cyan); margin-bottom: 0.5rem; font-size: 0.85rem;">[ STATUS: DEPLOYED ] // ARCHIVE_03 // SECTOR: LOGISTICS</p>
+                        <h2 style="font-size: 1.8rem;">Project: PATHFINDER</h2>
+                        <h3 class="text-gradient" style="margin-top: 0.3rem; font-size: 1.2rem; font-weight: 400;">Real-Time Fleet Management & Driver Tracking Platform</h3>
+                    </div>
+                    <div class="mono" style="color: var(--color-text-secondary); font-size: 0.85rem; text-align: right;">
+                        <div>YEAR: 2024</div>
+                        <div>DURATION: 3 MONTHS</div>
+                    </div>
+                </div>
+                <p style="color: var(--color-text-secondary); margin-bottom: 1.5rem; line-height: 1.8;">
+                    <strong style="color: #fff;">Challenge:</strong> A mid-size logistics company managing 200+ delivery drivers needed a real-time tracking dashboard with live GPS updates and automated route optimization — without relying on expensive SaaS fleet tools.
+                </p>
+                <p style="color: var(--color-text-secondary); margin-bottom: 2rem; line-height: 1.8;">
+                    <strong style="color: #fff;">Execution:</strong> Designed a WebSocket-based live tracking backend (FastAPI + Redis Pub/Sub) with sub-second GPS broadcast latency. Built a React operations dashboard for dispatchers. Integrated Google Maps Routing API with ML-based time-of-day prediction to reduce average delivery time.
+                </p>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin-bottom: 1.5rem;">
+                    <div style="text-align: center; padding: 1rem; background: rgba(0,243,255,0.05); border-radius: 4px;">
+                        <div class="text-gradient" style="font-size: 1.8rem; font-weight: 700;">200+</div>
+                        <div style="color: var(--color-text-secondary); font-size: 0.85rem;">Live Drivers Tracked</div>
+                    </div>
+                    <div style="text-align: center; padding: 1rem; background: rgba(0,243,255,0.05); border-radius: 4px;">
+                        <div class="text-gradient" style="font-size: 1.8rem; font-weight: 700;">&lt; 1s</div>
+                        <div style="color: var(--color-text-secondary); font-size: 0.85rem;">GPS Update Latency</div>
+                    </div>
+                    <div style="text-align: center; padding: 1rem; background: rgba(0,243,255,0.05); border-radius: 4px;">
+                        <div class="text-gradient" style="font-size: 1.8rem; font-weight: 700;">22%</div>
+                        <div style="color: var(--color-text-secondary); font-size: 0.85rem;">Delivery Time Saved</div>
+                    </div>
+                </div>
+                <div class="mono" style="background: rgba(0,0,0,0.4); padding: 1.5rem; border-radius: 4px; font-size: 0.85rem; color: var(--color-cyan);">
+                    > STACK: FASTAPI · WEBSOCKETS · REACT · REDIS · GOOGLE MAPS API · POSTGRESQL
+                </div>
+            </div>
+
+            <!-- Archive 4 -->
+            <div class="glass-panel" style="padding: 3rem; border-left: 3px solid var(--color-purple);">
+                <div style="display: flex; justify-content: space-between; align-items: start; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem;">
+                    <div>
+                        <p class="mono" style="color: var(--color-purple); margin-bottom: 0.5rem; font-size: 0.85rem;">[ STATUS: DEPLOYED ] // ARCHIVE_04 // SECTOR: LEGAL TECH</p>
+                        <h2 style="font-size: 1.8rem;">Project: COUNSEL</h2>
+                        <h3 class="text-gradient" style="margin-top: 0.3rem; font-size: 1.2rem; font-weight: 400;">AI-Powered Legal Document Analysis Chatbot</h3>
+                    </div>
+                    <div class="mono" style="color: var(--color-text-secondary); font-size: 0.85rem; text-align: right;">
+                        <div>YEAR: 2025</div>
+                        <div>DURATION: 5 MONTHS</div>
+                    </div>
+                </div>
+                <p style="color: var(--color-text-secondary); margin-bottom: 1.5rem; line-height: 1.8;">
+                    <strong style="color: #fff;">Challenge:</strong> A boutique law firm needed an internal AI assistant capable of parsing, summarizing, and answering questions from large volumes of contracts, case files, and legal precedents — while maintaining strict data privacy and never sending documents to external APIs.
+                </p>
+                <p style="color: var(--color-text-secondary); margin-bottom: 2rem; line-height: 1.8;">
+                    <strong style="color: #fff;">Execution:</strong> Deployed a fully local LLM (fine-tuned LLaMA 3) using RAG (Retrieval-Augmented Generation) architecture backed by a Pinecone vector database. Documents were chunked, embedded, and indexed on upload. A custom React chat UI allowed lawyers to query any document set conversationally with source citations returned per answer.
+                </p>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin-bottom: 1.5rem;">
+                    <div style="text-align: center; padding: 1rem; background: rgba(176,38,255,0.05); border-radius: 4px;">
+                        <div class="text-gradient" style="font-size: 1.8rem; font-weight: 700;">100%</div>
+                        <div style="color: var(--color-text-secondary); font-size: 0.85rem;">On-Premise (Private)</div>
+                    </div>
+                    <div style="text-align: center; padding: 1rem; background: rgba(176,38,255,0.05); border-radius: 4px;">
+                        <div class="text-gradient" style="font-size: 1.8rem; font-weight: 700;">70%</div>
+                        <div style="color: var(--color-text-secondary); font-size: 0.85rem;">Time Saved Per Review</div>
+                    </div>
+                    <div style="text-align: center; padding: 1rem; background: rgba(176,38,255,0.05); border-radius: 4px;">
+                        <div class="text-gradient" style="font-size: 1.8rem; font-weight: 700;">10K+</div>
+                        <div style="color: var(--color-text-secondary); font-size: 0.85rem;">Documents Indexed</div>
+                    </div>
+                </div>
+                <div class="mono" style="background: rgba(0,0,0,0.4); padding: 1.5rem; border-radius: 4px; font-size: 0.85rem; color: var(--color-purple);">
+                    > STACK: LLAMA-3 · RAG · PINECONE · LANGCHAIN · REACT · FASTAPI
+                </div>
+            </div>
+
+            <!-- Archive 5 -->
+            <div class="glass-panel" style="padding: 3rem; border-left: 3px solid var(--color-cyan);">
+                <div style="display: flex; justify-content: space-between; align-items: start; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem;">
+                    <div>
+                        <p class="mono" style="color: var(--color-cyan); margin-bottom: 0.5rem; font-size: 0.85rem;">[ STATUS: DEPLOYED ] // ARCHIVE_05 // SECTOR: SAAS</p>
+                        <h2 style="font-size: 1.8rem;">Project: NEXUS</h2>
+                        <h3 class="text-gradient" style="margin-top: 0.3rem; font-size: 1.2rem; font-weight: 400;">Multi-Tenant Analytics & Reporting SaaS Platform</h3>
+                    </div>
+                    <div class="mono" style="color: var(--color-text-secondary); font-size: 0.85rem; text-align: right;">
+                        <div>YEAR: 2025</div>
+                        <div>DURATION: 8 MONTHS</div>
+                    </div>
+                </div>
+                <p style="color: var(--color-text-secondary); margin-bottom: 1.5rem; line-height: 1.8;">
+                    <strong style="color: #fff;">Challenge:</strong> A B2B SaaS startup needed to build a scalable white-labelled analytics dashboard platform for enterprise clients to visualize their business KPIs. The system needed to handle hundreds of isolated client tenants without data bleed, while maintaining a sub-3 second dashboard load time even with complex aggregated queries.
+                </p>
+                <p style="color: var(--color-text-secondary); margin-bottom: 2rem; line-height: 1.8;">
+                    <strong style="color: #fff;">Execution:</strong> Designed a schema-per-tenant PostgreSQL isolation model. Built a query caching layer with Redis to pre-materialize expensive aggregation operations on a schedule. Frontend was built in Next.js with dynamic chart rendering using Recharts. Deployed on AWS with auto-scaling ECS Fargate containers.
+                </p>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin-bottom: 1.5rem;">
+                    <div style="text-align: center; padding: 1rem; background: rgba(0,243,255,0.05); border-radius: 4px;">
+                        <div class="text-gradient" style="font-size: 1.8rem; font-weight: 700;">2.1s</div>
+                        <div style="color: var(--color-text-secondary); font-size: 0.85rem;">Avg Dashboard Load</div>
+                    </div>
+                    <div style="text-align: center; padding: 1rem; background: rgba(0,243,255,0.05); border-radius: 4px;">
+                        <div class="text-gradient" style="font-size: 1.8rem; font-weight: 700;">500+</div>
+                        <div style="color: var(--color-text-secondary); font-size: 0.85rem;">Tenants Supported</div>
+                    </div>
+                    <div style="text-align: center; padding: 1rem; background: rgba(0,243,255,0.05); border-radius: 4px;">
+                        <div class="text-gradient" style="font-size: 1.8rem; font-weight: 700;">∞</div>
+                        <div style="color: var(--color-text-secondary); font-size: 0.85rem;">Horizontal Scale</div>
+                    </div>
+                </div>
+                <div class="mono" style="background: rgba(0,0,0,0.4); padding: 1.5rem; border-radius: 4px; font-size: 0.85rem; color: var(--color-cyan);">
+                    > STACK: NEXT.JS · POSTGRESQL · REDIS · AWS ECS · RECHARTS · FASTAPI
+                </div>
+            </div>
+
+        </div>
+
+        <!-- CTA -->
+        <div style="text-align: center; margin-top: 4rem; padding: 4rem; background: linear-gradient(135deg, rgba(0,243,255,0.05), rgba(176,38,255,0.05)); border: 1px solid var(--color-border); border-radius: 8px;">
+            <p class="mono text-gradient" style="margin-bottom: 1rem; font-size: 0.85rem;">// HAVE_A_MISSION</p>
+            <h3 style="font-size: 1.8rem; margin-bottom: 1rem;">Want us to engineer yours?</h3>
+            <p style="color: var(--color-text-secondary); margin-bottom: 2rem;">Every project starts with a free 30-minute discovery call. No NDAs required to talk.</p>
+            <a href="#" data-route="/contact" class="btn-primary">START THE BRIEFING</a>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,79 @@
+<section class="section" style="padding-top: 10rem; min-height: 100vh;">
+    <div class="container">
+        <div class="section-label" data-text="05 // SYSTEM_VISUALS">05 // SYSTEM_VISUALS</div>
+        <h1 class="section-title">Interactive <br><span class="text-gradient">Showcase.</span></h1>
+        <p class="section-subtitle">
+            Interact with the 3D data constructs below to decrypt our core capabilities. Hover or click to extract node data.
+        </p>
+
+        <!-- SECTION 1: Existing Hologram Constructs -->
+        <div style="display: flex; gap: 4rem; margin-top: 4rem; align-items: stretch; justify-content: space-between;">
+            
+            <!-- Left Side: Interactive 3D Canvas Container -->
+            <div id="hologram-container" class="glass-panel" style="flex: 1; min-height: 500px; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; border-radius: 8px;">
+                <!-- Loading text while Three.js initializes -->
+                <div id="hologram-loader" class="mono text-gradient" style="position: absolute; z-index: 10;">[ INITIALIZING 3D CONSTRUCTS... ]</div>
+            </div>
+
+            <!-- Right Side: Reading Content Panel that updates dynamically -->
+            <div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+                <div id="reading-content" class="glass-panel" style="padding: 3rem; min-height: 400px; transition: opacity 0.3s ease;">
+                    <p class="mono text-gradient" style="margin-bottom: 1rem; font-size: 0.9rem;">> SYSTEM READY</p>
+                    <h2 style="font-size: 2rem; margin-bottom: 1.5rem;">Select A Construct</h2>
+                    <p style="color: var(--color-text-secondary); line-height: 1.8;">
+                        Awaiting user input. <br><br>
+                        Please move your cursor over the spinning 3D wireframe cubes in the adjacent panel to decrypt and view the specific operating parameters for our AI, Cybersecurity, and Data Engineering services.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- SECTION 2: Interactive Particle Sphere -->
+        <div style="margin-top: 8rem;">
+            <div class="section-label" data-text="// NEURAL_CLUSTER">// NEURAL_CLUSTER</div>
+            <h2 class="section-title" style="font-size: clamp(2rem, 4vw, 3rem);">Neural Network <span class="text-gradient">Visualization.</span></h2>
+            <p style="color: var(--color-text-secondary); max-width: 600px; margin-bottom: 3rem; line-height: 1.8;">
+                An interactive particle system representing interconnected data nodes. Move your cursor to attract and repel the neural particles. Click to trigger a pulse wave.
+            </p>
+            <div id="neural-container" class="glass-panel" style="width: 100%; height: 500px; position: relative; overflow: hidden; border-radius: 8px; cursor: crosshair;">
+                <canvas id="neural-canvas" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></canvas>
+                <div class="mono" style="position: absolute; bottom: 1rem; left: 1.5rem; font-size: 0.75rem; color: var(--color-cyan); opacity: 0.6; pointer-events: none;">
+                    [ MOVE: attract particles | CLICK: pulse wave | SCROLL: watch them drift ]
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 3: Interactive DNA Helix -->
+        <div style="margin-top: 8rem;">
+            <div class="section-label" data-text="// DATA_HELIX">// DATA_HELIX</div>
+            <h2 class="section-title" style="font-size: clamp(2rem, 4vw, 3rem);">Data Architecture <span class="text-gradient">Helix.</span></h2>
+            <p style="color: var(--color-text-secondary); max-width: 600px; margin-bottom: 3rem; line-height: 1.8;">
+                A procedural double-helix structure representing our data pipeline architecture. Drag horizontally to rotate the structure. Watch how the data nodes pulse along the backbone.
+            </p>
+            <div id="helix-container" class="glass-panel" style="width: 100%; height: 500px; position: relative; overflow: hidden; border-radius: 8px; cursor: grab;">
+                <canvas id="helix-canvas" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></canvas>
+                <div class="mono" style="position: absolute; bottom: 1rem; left: 1.5rem; font-size: 0.75rem; color: var(--color-purple); opacity: 0.6; pointer-events: none;">
+                    [ DRAG: rotate helix | HOVER: highlight strand nodes ]
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 4: Cyber Grid Terrain -->
+        <div style="margin-top: 8rem; padding-bottom: 8rem;">
+            <div class="section-label" data-text="// CYBER_TERRAIN">// CYBER_TERRAIN</div>
+            <h2 class="section-title" style="font-size: clamp(2rem, 4vw, 3rem);">Infrastructure <span class="text-gradient">Grid.</span></h2>
+            <p style="color: var(--color-text-secondary); max-width: 600px; margin-bottom: 3rem; line-height: 1.8;">
+                A procedurally generated wireframe terrain that reacts to your cursor in real-time. The landscape morphs based on mouse position, simulating dynamic system topography.
+            </p>
+            <div id="terrain-container" class="glass-panel" style="width: 100%; height: 500px; position: relative; overflow: hidden; border-radius: 8px; cursor: crosshair;">
+                <canvas id="terrain-canvas" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></canvas>
+                <div class="mono" style="position: absolute; bottom: 1rem; left: 1.5rem; font-size: 0.75rem; color: #ff0055; opacity: 0.6; pointer-events: none;">
+                    [ MOVE: deform terrain | the grid responds to your presence ]
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</section>

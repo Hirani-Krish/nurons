@@ -1,0 +1,76 @@
+<section class="section" style="padding-top: 12rem; min-height: 80vh;">
+    <div class="container" style="max-width: 800px;">
+        
+        <div class="terminal-window window glass-panel" style="padding: 0; overflow: hidden; box-shadow: 0 0 50px rgba(0, 243, 255, 0.1);">
+            <div class="terminal-header" style="background: rgba(0,0,0,0.8); padding: 0.5rem 1rem; border-bottom: 1px solid var(--color-border); display: flex; align-items: center; gap: 0.5rem;">
+                <div style="width: 12px; height: 12px; border-radius: 50%; background: #ff5f56;"></div>
+                <div style="width: 12px; height: 12px; border-radius: 50%; background: #ffbd2e;"></div>
+                <div style="width: 12px; height: 12px; border-radius: 50%; background: #27c93f;"></div>
+                <span class="mono" style="margin-left: 1rem; color: #a1a1aa; font-size: 0.8rem;">root@nurons:~</span>
+            </div>
+            
+            <div class="terminal-body mono" style="padding: 2rem; color: #00f3ff; min-height: 400px; font-size: 0.95rem; line-height: 1.8;" id="terminal-output">
+                Nurons OS [Version 3.1.4]<br>
+                (c) 2026 Nurons Core. All rights reserved.<br><br>
+                Type 'help' to see available commands.<br><br>
+            </div>
+            
+            <div style="padding: 0 2rem 2rem 2rem; display: flex; align-items: center;" class="mono">
+                <span style="color: #00f3ff; margin-right: 0.5rem;">root@nurons:~$</span>
+                <input type="text" id="terminal-input" autocomplete="off" autofocus 
+                       style="background: transparent; border: none; color: #fff; font-family: var(--font-mono); font-size: 0.95rem; width: 100%; outline: none;">
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        (function initTerminal() {
+            const input = document.getElementById('terminal-input');
+            const output = document.getElementById('terminal-output');
+
+            if(!input) return; // fail safe
+            input.focus();
+
+            // Auto focus on click
+            document.querySelector('.terminal-window').addEventListener('click', () => input.focus());
+
+            input.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter') {
+                    const val = this.value.trim().toLowerCase();
+                    this.value = '';
+
+                    // Print command
+                    output.innerHTML += `root@nurons:~$ <span style="color: #fff;">${val}</span><br>`;
+
+                    // Parse command
+                    if (val === 'help') {
+                        output.innerHTML += `
+                            Available commands:<br>
+                            &nbsp;&nbsp;<span style="color:#fff">contact</span>  - Initialize secure comm line<br>
+                            &nbsp;&nbsp;<span style="color:#fff">services</span> - List system modules<br>
+                            &nbsp;&nbsp;<span style="color:#fff">clear</span>    - Clear terminal output<br>
+                            &nbsp;&nbsp;<span style="color:#fff">override</span> - Execute admin override<br><br>
+                        `;
+                    } else if (val === 'contact') {
+                        output.innerHTML += `>> ping: <a href="mailto:khirani042@rku.ac.in" style="color:#00f3ff; text-decoration:underline;">[TRANSMIT_SECURE_MAIL]</a><br><br>`;
+                    } else if (val === 'services') {
+                        output.innerHTML += `Loading modules...<br>[OK] AI Integration<br>[OK] System Automation<br>[OK] Cyber Security<br><br>`;
+                    } else if (val === 'clear') {
+                        output.innerHTML = '';
+                    } else if (val === 'override') {
+                        output.innerHTML += `<span style="color:#ff5f56">ACCESS DENIED. THIS INCIDENT WILL BE REPORTED.</span><br><br>`;
+                        // Secret visual glitch triggered!
+                        document.body.style.filter = "invert(1) hue-rotate(180deg)";
+                        setTimeout(() => document.body.style.filter = "none", 500);
+                    } else if (val !== '') {
+                        output.innerHTML += `bash: ${val}: command not found<br><br>`;
+                    }
+
+                    // Auto scroll
+                    output.scrollTop = output.scrollHeight;
+                }
+            });
+        })();
+    </script>
+</section>

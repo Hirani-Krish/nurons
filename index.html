@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nurons | Tech Solutions & AI Engineering</title>
+    <meta name="description" content="Nurons — We build high-performance digital infrastructure. AI integrations, web development, automation, cybersecurity, and custom software engineering.">
+    <link rel="canonical" href="https://nurons.in/">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/main.css?v=6.0">
+    
+    <!-- Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+
+    <!-- Web3Forms — no SDK needed, handled via fetch in router.js -->
+
+    <!-- Core Scripts -->
+    <script src="scripts/three-scene.js?v=6.0" defer></script>
+    <script src="scripts/router.js?v=6.0" defer></script>
+</head>
+<body>
+
+    <!-- 3D Persistent Background Canvas -->
+    <div id="canvas-container">
+        <canvas id="hero-canvas"></canvas>
+    </div>
+
+    <!-- Navigation (Persistent) -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="#" data-route="/" class="logo">
+                <div class="logo-icon"></div>
+                <span class="text-gradient">NURONS</span>
+            </a>
+
+            <!-- Mobile Hamburger Button -->
+            <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <div class="nav-links" id="nav-links">
+                <a href="#" data-route="/services">SUBSYSTEMS</a>
+                <a href="#" data-route="/archives">ARCHIVES</a>
+                <a href="#" data-route="/team">THE_HIVE</a>
+                <a href="#" data-route="/intel">INTEL</a>
+                <a href="#" data-route="/holograms" class="mono" style="margin-left: 1rem;">>_ SHOWCASE</a>
+                <a href="#" data-route="/contact" class="btn-primary mono" style="padding: 0.5rem 1.2rem; font-size: 0.8rem; margin-left: 0.5rem;">CONTACT</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Dynamic SPA Content Container -->
+    <main id="app-content" class="main-content">
+        <!-- Route Partials Injected Here -->
+    </main>
+
+    <!-- Footer (Persistent) -->
+    <footer style="padding: 2rem 0; border-top: 1px solid var(--color-border); text-align: center; position: relative; z-index: 2;">
+        <div class="container mono" style="font-size: 0.8rem; color: var(--color-text-secondary);">
+            &copy; <script>document.write(new Date().getFullYear())</script> NURONS. ALL SYSTEMS NORMAL.
+        </div>
+    </footer>
+
+    <!-- Navbar scroll + mobile menu logic (Persistent) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navbar = document.getElementById('navbar');
+            const menuBtn = document.getElementById('mobile-menu-btn');
+            const navLinks = document.getElementById('nav-links');
+
+            // Scroll effect
+            window.addEventListener('scroll', () => {
+                if(window.scrollY > 50) navbar.classList.add('scrolled');
+                else navbar.classList.remove('scrolled');
+            }, { passive: true });
+
+            // Mobile hamburger toggle
+            if(menuBtn && navLinks) {
+                menuBtn.addEventListener('click', () => {
+                    menuBtn.classList.toggle('active');
+                    navLinks.classList.toggle('open');
+                    document.body.classList.toggle('menu-open');
+                });
+
+                // Close menu when a nav link is clicked
+                navLinks.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        menuBtn.classList.remove('active');
+                        navLinks.classList.remove('open');
+                        document.body.classList.remove('menu-open');
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>
