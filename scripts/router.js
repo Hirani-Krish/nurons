@@ -8,6 +8,16 @@ class Router {
         this.appContainer = document.getElementById('app-content');
         this.cache = {};
 
+        // Auto-detect base path for GitHub Pages subpath hosting
+        // e.g., if hosted at username.github.io/nurons/, basePath = '/nurons'
+        const baseTag = document.querySelector('base');
+        if (baseTag) {
+            const href = baseTag.getAttribute('href');
+            this.basePath = href.endsWith('/') ? href.slice(0, -1) : href;
+        } else {
+            this.basePath = '';
+        }
+
         // Define routes mapping path to partial HTML file
         this.routes = {
             '/': 'pages/home.html',
@@ -35,7 +45,7 @@ class Router {
 
         // Handle Browser Back/Forward navigation
         window.addEventListener('popstate', () => {
-            this.handleRoute(window.location.pathname);
+            this.handleRoute(this.stripBase(window.location.pathname));
         });
 
         // Initial Load Route — handle GitHub Pages 404 SPA redirect
@@ -43,16 +53,28 @@ class Router {
         const redirectPath = params.get('p');
         if (redirectPath) {
             // Clean up the URL and navigate to the intended route
-            window.history.replaceState({}, '', redirectPath);
-            this.handleRoute(redirectPath);
+            const cleanRoute = this.stripBase(redirectPath);
+            window.history.replaceState({}, '', this.basePath + cleanRoute);
+            this.handleRoute(cleanRoute);
         } else {
-            const initialPath = window.location.pathname;
-            this.handleRoute(initialPath === '/index.html' ? '/' : (initialPath || '/'));
+            let initialPath = this.stripBase(window.location.pathname);
+            if (initialPath === '/index.html') initialPath = '/';
+            this.handleRoute(initialPath || '/');
         }
     }
 
+    // Strip the basePath prefix from a full pathname to get the route key
+    stripBase(fullPath) {
+        if (this.basePath && fullPath.startsWith(this.basePath)) {
+            const stripped = fullPath.slice(this.basePath.length);
+            return stripped || '/';
+        }
+        return fullPath || '/';
+    }
+
     async navigate(path) {
-        window.history.pushState({}, '', path);
+        // path is a route key like '/archives', prepend basePath for the URL
+        window.history.pushState({}, '', this.basePath + path);
         await this.handleRoute(path);
         
         // Update Active Nav Link
@@ -65,8 +87,10 @@ class Router {
     }
 
     async handleRoute(path) {
-        const routePath = path === '/index.html' ? '/' : path;
+        const routePath = path === '/index.html' ? '/' : (path || '/');
         const pageFile = this.routes[routePath] || this.routes['/'];
+        // Build fetch URL relative to basePath
+        const fetchUrl = this.basePath ? this.basePath + '/' + pageFile : pageFile;
 
         // 1. Fade out current content
         gsap.to(this.appContainer, {
@@ -81,7 +105,7 @@ class Router {
                     html = this.cache[pageFile];
                 } else {
                     try {
-                        const response = await fetch(pageFile);
+                        const response = await fetch(fetchUrl);
                         if (!response.ok) throw new Error('Network response was not ok');
                         html = await response.text();
                         this.cache[pageFile] = html; // Cache to save network requests
