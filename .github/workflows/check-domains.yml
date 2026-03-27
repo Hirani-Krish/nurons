@@ -1,0 +1,37 @@
+name: Domain Availability Checker
+
+on:
+  schedule:
+    - cron: '*/30 * * * *'   # Runs every 30 minutes
+  workflow_dispatch:           # Manual "Run workflow" button in Actions tab
+
+permissions:
+  contents: write              # Allows committing results back to repo
+
+jobs:
+  check-domains:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run domain checker
+        working-directory: domain-scraper
+        run: node check.js
+
+      - name: Commit results
+        run: |
+          git config user.name "Domain Bot"
+          git config user.email "bot@domain-checker.local"
+          git add domain-scraper/data/
+          AVAILABLE=$(wc -l < domain-scraper/data/available.txt 2>/dev/null || echo "0")
+          ERRORS=$(wc -l < domain-scraper/data/errors.log 2>/dev/null || echo "0")
+          git commit -m "🔍 Domain check | ${AVAILABLE} available | ${ERRORS} errors logged" || echo "No changes"
+          git push
