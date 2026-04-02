@@ -15,8 +15,8 @@ const fs = require('fs');
 const path = require('path');
 
 // ===== Configuration =====
-const BATCH_SIZE = 200;           // Words per run (200 × 0.6s ≈ 2 minutes)
-const DELAY_MS = 600;             // Delay between requests
+const BATCH_SIZE = 1000;           // Words per run (1000 × 0.6s ≈ 600 minutes)
+const DELAY_MS = 200;             // Delay between requests
 const MAX_BACKOFF_MS = 30000;     // Max retry wait
 const MAX_RETRIES = 4;            // Retries per word on failure
 const RDAP_URL = 'https://rdap.org/domain/';
